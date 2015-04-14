@@ -19,3 +19,4 @@ This web app will die if you don't listen to it complain or give it meds.
 - Bootstrap ver 3.3.1
 - mochaJS ver 2.2.1
 - chaiJS ver 2.2.0
+- Dead Ghost icon by Julien Deveaux (The Noun Project)
