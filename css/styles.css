@@ -1,0 +1,7 @@
+#result, #nomatches {
+  display: none;
+}
+
+.footnote {
+    font-size: 8px;
+}
