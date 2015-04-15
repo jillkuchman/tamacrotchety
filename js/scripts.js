@@ -85,6 +85,8 @@ $(document).ready(function() {
             $('#statusNap').attr("style", "width: " + tamacrotchety.nap*10 + "%" );
             if(!tamacrotchety.alive){
                 $("#dead").show();
+                $("#tamacrotchety-created").hide();
+
             }
         });
 
@@ -96,6 +98,8 @@ $(document).ready(function() {
             $('#statusNap').attr("style", "width: " + tamacrotchety.nap*10 + "%" );
             if(!tamacrotchety.alive){
                 $("#dead").show();
+                $("#tamacrotchety-created").hide();
+
             }
         });
 
@@ -107,6 +111,7 @@ $(document).ready(function() {
             $('#statusNap').attr("style", "width: " + tamacrotchety.nap*10 + "%" );
             if(!tamacrotchety.alive){
                 $("#dead").show();
+                $("#tamacrotchety-created").hide();
             }
         });
 
@@ -118,6 +123,7 @@ $(document).ready(function() {
             $('#statusNap').attr("style", "width: " + tamacrotchety.nap*10 + "%" );
             if(!tamacrotchety.alive){
                 $("#dead").show();
+                $("#tamacrotchety-created").hide();
             }
         });
 
