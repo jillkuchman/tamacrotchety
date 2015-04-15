@@ -83,7 +83,9 @@ $(document).ready(function() {
             $('#statusListen').attr("style", "width: " + tamacrotchety.grumbling*10 + "%" );
             $('#statusFiber').attr("style", "width: " + tamacrotchety.metamucil*10 + "%" );
             $('#statusNap').attr("style", "width: " + tamacrotchety.nap*10 + "%" );
-            
+            if(!tamacrotchety.alive){
+                $("#dead").show();
+            }
         });
 
         $('#listen-to-grumbling').click(function(){
@@ -92,14 +94,20 @@ $(document).ready(function() {
             $('#statusListen').attr("style", "width: " + tamacrotchety.grumbling*10 + "%" );
             $('#statusFiber').attr("style", "width: " + tamacrotchety.metamucil*10 + "%" );
             $('#statusNap').attr("style", "width: " + tamacrotchety.nap*10 + "%" );
-
+            if(!tamacrotchety.alive){
+                $("#dead").show();
+            }
         });
+
         $('#give-fiber').click(function(){
             tamacrotchety.giveFiber();
             $('#statusMeds').attr("style", "width: " + tamacrotchety.meds*10 + "%" );
             $('#statusListen').attr("style", "width: " + tamacrotchety.grumbling*10 + "%" );
             $('#statusFiber').attr("style", "width: " + tamacrotchety.metamucil*10 + "%" );
             $('#statusNap').attr("style", "width: " + tamacrotchety.nap*10 + "%" );
+            if(!tamacrotchety.alive){
+                $("#dead").show();
+            }
         });
 
         $('#give-nap').click(function() {
@@ -108,6 +116,9 @@ $(document).ready(function() {
             $('#statusListen').attr("style", "width: " + tamacrotchety.grumbling*10 + "%" );
             $('#statusFiber').attr("style", "width: " + tamacrotchety.metamucil*10 + "%" );
             $('#statusNap').attr("style", "width: " + tamacrotchety.nap*10 + "%" );
+            if(!tamacrotchety.alive){
+                $("#dead").show();
+            }
         });
 
 
