@@ -7,6 +7,8 @@ $(document).ready(function() {
     var alive = true;   
     var tamacrotchety;
 
+    var causes_of_death = [];
+
     function statusBar() {
         $('#statusMeds').attr("style", "width: " + tamacrotchety.meds*10 + "%" );
         $('#statusListen').attr("style", "width: " + tamacrotchety.grumbling*10 + "%" );
@@ -19,6 +21,8 @@ $(document).ready(function() {
             $("#dead").show();
             $("#tamacrotchety-created").hide();
             $("#death-message").text( tamacrotchety.tamaName + " has died.");
+                    console.log(causes_of_death);
+
         }
     }
     
@@ -75,7 +79,28 @@ $(document).ready(function() {
             },
 
             isAlive: function() {
-                if(this.meds === 0 || this.meds > 10 || this.grumbling > 10 || this.metamucil === 0 || this.metamucil > 10 || this.nap === 0 || this.nap > 10) {
+                if (this.meds === 0 || this.meds > 10) {
+                    causes_of_death.push('crazy');
+                    this.alive = false;
+                }
+                if (this.grumbling > 10) {
+                    causes_of_death.push('crotchety');  
+                    this.alive = false;
+                }
+                if (this.metamucil === 0) {
+                    causes_of_death.push('implosion');
+                    this.alive = false;
+                }
+                if (this.metamucil > 10) {
+                    causes_of_death.push('explosion');
+                    this.alive = false;
+                }
+                if (this.nap === 0) {
+                    causes_of_death.push('nap attack');
+                    this.alive = false;
+                }
+                if (this.nap > 10) {
+                    causes_of_death.push('never woke up');
                     this.alive = false;
                 }
             }
@@ -111,7 +136,6 @@ $(document).ready(function() {
             statusBar();
             deathTest();
         });
-
 
     });
 
