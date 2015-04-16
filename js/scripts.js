@@ -21,8 +21,6 @@ $(document).ready(function() {
             $("#dead").show();
             $("#tamacrotchety-created").hide();
             $("#death-message").text( tamacrotchety.tamaName + " has died.");
-                    console.log(causes_of_death);
-
         }
     }
     
