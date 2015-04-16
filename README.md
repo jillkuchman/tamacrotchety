@@ -1,4 +1,4 @@
-# Tomacrotchety! for Epicodus
+# Tamacrotchety! for Epicodus
 ## by James Nielson & Jill Küchman
 ### Date: April 10, 2015
 #### Description
