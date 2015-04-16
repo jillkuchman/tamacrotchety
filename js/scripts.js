@@ -27,6 +27,11 @@ $(document).ready(function() {
             $("#death-message").text( tamacrotchety.tamaName + " has died of " + causes);
         }
     }
+
+    function tamaClick() {
+        statusBar();
+        deathTest();
+    }
     
     $('form#tamacrotchety-name').submit(function(event) {
         event.preventDefault();
@@ -117,30 +122,22 @@ $(document).ready(function() {
 
         $('#give-meds').click(function(){
             tamacrotchety.giveMeds();
-            statusBar();
-            deathTest();
+            tamaClick();
         });
 
         $('#listen-to-grumbling').click(function(){
             tamacrotchety.listen();
-            statusBar();
-            deathTest();
+            tamaClick();
         });
 
         $('#give-fiber').click(function(){
             tamacrotchety.giveFiber();
-            statusBar();
-            deathTest();
+            tamaClick();
         });
 
         $('#give-nap').click(function() {
             tamacrotchety.giveNap();
-            statusBar();
-            deathTest();
+            tamaClick();
         });
-
     });
-
-
-
 });
