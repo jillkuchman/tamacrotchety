@@ -20,10 +20,11 @@ $(document).ready(function() {
         if(!tamacrotchety.alive){
             $("#dead").show();
             $("#tamacrotchety-created").hide();
-            var causes = "";
-            causes_of_death.forEach(function(cause){
-                causes += cause;
-            });
+            var causes = causes_of_death.join(', ');
+            // var causes = "";
+            // causes_of_death.forEach(function(cause){
+            //     causes += cause;
+            // });
             $("#death-message").text( tamacrotchety.tamaName + " has died of " + causes);
         }
     }
