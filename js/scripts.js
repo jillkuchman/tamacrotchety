@@ -4,28 +4,28 @@ $(document).ready(function() {
     var grumbling = 5;
     var metamucil = 5;
     var nap = 5;
-    var alive = true;   
+    var alive = true;
     var tamacrotchety;
 
     var causes_of_death = [];
 
     function statusBar() {
-        $('#statusMeds').attr("style", "width: " + tamacrotchety.meds*10 + "%" );
-        $('#statusListen').attr("style", "width: " + tamacrotchety.grumbling*10 + "%" );
-        $('#statusFiber').attr("style", "width: " + tamacrotchety.metamucil*10 + "%" );
-        $('#statusNap').attr("style", "width: " + tamacrotchety.nap*10 + "%" );
+        $('#statusMeds').attr('style', 'width: ' + tamacrotchety.meds*10 + '%' );
+        $('#statusListen').attr('style', 'width: ' + tamacrotchety.grumbling*10 + '%' );
+        $('#statusFiber').attr('style', 'width: ' + tamacrotchety.metamucil*10 + '%' );
+        $('#statusNap').attr('style', 'width: ' + tamacrotchety.nap*10 + '%' );
+    }
+
+    function statusBarColor() {
+        $('.progress-bar').attr('style')
     }
 
     function deathTest() {
         if(!tamacrotchety.alive){
-            $("#dead").show();
-            $("#tamacrotchety-created").hide();
+            $('#dead').show();
+            $('#tamacrotchety-created').hide();
             var causes = causes_of_death.join(', ');
-            // var causes = "";
-            // causes_of_death.forEach(function(cause){
-            //     causes += cause;
-            // });
-            $("#death-message").text( tamacrotchety.tamaName + " has died of " + causes);
+            $('#death-message').text( tamacrotchety.tamaName + ' has died of ' + causes);
         }
     }
 
@@ -33,7 +33,7 @@ $(document).ready(function() {
         statusBar();
         deathTest();
     }
-    
+
     $('form#tamacrotchety-name').submit(function(event) {
         event.preventDefault();
 
@@ -92,7 +92,7 @@ $(document).ready(function() {
                     this.alive = false;
                 }
                 if (this.grumbling > 10) {
-                    causes_of_death.push('crotchety');  
+                    causes_of_death.push('crotchety');
                     this.alive = false;
                 }
                 if (this.metamucil === 0) {
@@ -117,9 +117,9 @@ $(document).ready(function() {
 
         statusBar();
 
-        $("#tamaName").text(tamacrotchety.tamaName);
-        $("#tamacrotchety-form").hide();
-        $("#tamacrotchety-created").show();
+        $('#tamaName').text(tamacrotchety.tamaName);
+        $('#tamacrotchety-form').hide();
+        $('#tamacrotchety-created').show();
 
         $('#give-meds').click(function(){
             tamacrotchety.giveMeds();
