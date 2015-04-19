@@ -9,15 +9,34 @@ $(document).ready(function() {
 
     var causes_of_death = [];
 
-    function statusBar() {
-        $('#statusMeds').attr('style', 'width: ' + tamacrotchety.meds*10 + '%' );
-        $('#statusListen').attr('style', 'width: ' + tamacrotchety.grumbling*10 + '%' );
-        $('#statusFiber').attr('style', 'width: ' + tamacrotchety.metamucil*10 + '%' );
-        $('#statusNap').attr('style', 'width: ' + tamacrotchety.nap*10 + '%' );
+    function setWidth($elem, val) {
+        $elem.attr('style', 'width: ' + val * 10 + '%');
     }
 
-    function statusBarColor() {
-        $('.progress-bar').attr('style')
+    function setColor($elem, val) {
+        var color;
+
+        var colorGreen = 'progress-bar-success';
+        var colorYellow = 'progress-bar-warning';
+        var colorRed = 'progress-bar-danger'
+
+        if (val >= 7){
+            color = colorGreen;
+        }
+        else if (val >= 3){
+            color = colorYellow;
+        }
+        else {
+            color = colorRed;
+        }
+
+        $elem.removeClass(colorGreen + ' ' + colorYellow + ' ' + colorRed);
+        $elem.addClass(color);
+    }
+
+    function updateStatus($elem, val) {
+        setWidth($elem, val);
+        setColor($elem, val);
     }
 
     function deathTest() {
@@ -30,7 +49,11 @@ $(document).ready(function() {
     }
 
     function tamaClick() {
-        statusBar();
+        updateStatus($('#statusMeds'), tamacrotchety.meds);
+        updateStatus($('#statusListen'), tamacrotchety.grumbling);
+        updateStatus($('#statusFiber'), tamacrotchety.metamucil);
+        updateStatus($('#statusNap'), tamacrotchety.nap);
+
         deathTest();
     }
 
@@ -115,7 +138,10 @@ $(document).ready(function() {
 
         };
 
-        statusBar();
+        updateStatus($('#statusMeds'), tamacrotchety.meds);
+        updateStatus($('#statusListen'), tamacrotchety.grumbling);
+        updateStatus($('#statusFiber'), tamacrotchety.metamucil);
+        updateStatus($('#statusNap'), tamacrotchety.nap);
 
         $('#tamaName').text(tamacrotchety.tamaName);
         $('#tamacrotchety-form').hide();
