@@ -1,5 +1,5 @@
 # Tamacrotchety! for Epicodus
-## by James Nielson & Jill Küchman
+## by James Nielson & Jill Kuchman
 ### Date: April 10, 2015
 #### Description
 This web app will die if you don't listen to it complain or give it meds.
